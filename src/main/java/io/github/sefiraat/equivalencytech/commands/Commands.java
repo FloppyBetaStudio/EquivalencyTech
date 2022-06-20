@@ -147,6 +147,18 @@ public class Commands extends BaseCommand {
             if (sender instanceof Player) {
                 if(ConfigMain.getPlayerEmc(plugin, player.getPlayer())+amount > 0){
                     ConfigMain.addPlayerEmc(plugin, player.getPlayer().getUniqueId().toString(), new Double(amount));
+                    sender.sendMessage("操作完成");
+                }else{
+                    sender.sendMessage("SUM结果小于0，停止操作");
+                }
+            }
+        }
+
+        @Subcommand("lookupEMC")
+        @CommandCompletion("*")
+        public void onAddEMC(CommandSender sender, OnlinePlayer player) {
+            if (sender instanceof Player) {
+                sender.sendMessage("EMC余额:"+toString(ConfigMain.getPlayerEmc(plugin, player.getPlayer())));
                 }
             }
         }
