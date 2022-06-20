@@ -143,7 +143,7 @@ public class Commands extends BaseCommand {
 
         @Default
         @CommandCompletion("@player @amount")
-        public void onDefault(CommandSender sender, OnlinePlayer player, double amount) {
+        public void onDefault(CommandSender sender, Player player, double amount) {
             if (sender instanceof Player) {
                 if(ConfigMain.getPlayerEmc(plugin, player)+amount > 0){
                     addPlayerEmc(plugin, player.getUniqueId().toString(), new Double(amount));
