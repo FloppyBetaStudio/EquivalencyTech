@@ -139,7 +139,7 @@ public class Commands extends BaseCommand {
     @CommandCompletion("@player @amount")
     @CommandPermission("EquiTech.Admin")
     @Description("Gives EMC")
-    public class GiveItem extends BaseCommand {
+    public class GiveEMC extends BaseCommand {
 
         @Default
         public void onDefault(CommandSender sender, OnlinePlayer player, double amount) {
