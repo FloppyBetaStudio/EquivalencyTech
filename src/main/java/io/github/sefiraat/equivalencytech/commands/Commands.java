@@ -142,7 +142,7 @@ public class Commands extends BaseCommand {
     public class GiveEMC extends BaseCommand {
 
         @Subcommand("addEMC")
-        @CommandCompletion("@player @amount")
+        @CommandCompletion("@players @amount")
         public void onAddEMC(CommandSender sender, Player player, double amount) {
             if (sender instanceof Player) {
                 if(ConfigMain.getPlayerEmc(plugin, player)+amount > 0){
