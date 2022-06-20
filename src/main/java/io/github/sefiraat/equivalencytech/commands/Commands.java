@@ -136,14 +136,14 @@ public class Commands extends BaseCommand {
     }
 
 
-    @Subcommand("GiveEMC")
+    @Subcommand("manEMC")
     @CommandPermission("EquiTech.Admin")
-    @Description("Gives EMC")
+    @Description("EMC Management")
     public class GiveEMC extends BaseCommand {
 
-        @Default
+        @Subcommand("addEMC")
         @CommandCompletion("@player @amount")
-        public void onDefault(CommandSender sender, Player player, double amount) {
+        public void onAddEMC(CommandSender sender, Player player, double amount) {
             if (sender instanceof Player) {
                 if(ConfigMain.getPlayerEmc(plugin, player)+amount > 0){
                     ConfigMain.addPlayerEmc(plugin, player.getUniqueId().toString(), new Double(amount));
