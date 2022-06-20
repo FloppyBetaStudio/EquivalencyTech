@@ -146,7 +146,7 @@ public class Commands extends BaseCommand {
         public void onDefault(CommandSender sender, Player player, double amount) {
             if (sender instanceof Player) {
                 if(ConfigMain.getPlayerEmc(plugin, player)+amount > 0){
-                    addPlayerEmc(plugin, player.getUniqueId().toString(), new Double(amount));
+                    ConfigMain.addPlayerEmc(plugin, player.getUniqueId().toString(), new Double(amount));
                 }
             }
         }
