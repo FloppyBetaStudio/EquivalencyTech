@@ -142,11 +142,11 @@ public class Commands extends BaseCommand {
     public class GiveEMC extends BaseCommand {
 
         @Subcommand("addEMC")
-        @CommandCompletion("@players @amount")
-        public void onAddEMC(CommandSender sender, Player player, double amount) {
+        @CommandCompletion("* @amount")
+        public void onAddEMC(CommandSender sender, OnlinePlayer player, double amount) {
             if (sender instanceof Player) {
-                if(ConfigMain.getPlayerEmc(plugin, player)+amount > 0){
-                    ConfigMain.addPlayerEmc(plugin, player.getUniqueId().toString(), new Double(amount));
+                if(ConfigMain.getPlayerEmc(plugin, player.getPlayer())+amount > 0){
+                    ConfigMain.addPlayerEmc(plugin, player.getPlayer().getUniqueId().toString(), new Double(amount));
                 }
             }
         }
