@@ -10,6 +10,7 @@ import co.aikar.commands.annotation.Subcommand;
 import co.aikar.commands.bukkit.contexts.OnlinePlayer;
 import io.github.sefiraat.equivalencytech.EquivalencyTech;
 import io.github.sefiraat.equivalencytech.misc.Utils;
+import io.github.sefiraat.equivalencytech.configuration.ConfigMain;
 import io.github.sefiraat.equivalencytech.statics.ContainerStorage;
 import io.github.sefiraat.equivalencytech.statics.Messages;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
@@ -136,16 +137,16 @@ public class Commands extends BaseCommand {
 
 
     @Subcommand("GiveEMC")
-    @CommandCompletion("@player @amount")
     @CommandPermission("EquiTech.Admin")
     @Description("Gives EMC")
     public class GiveEMC extends BaseCommand {
 
         @Default
+        @CommandCompletion("@player @amount")
         public void onDefault(CommandSender sender, OnlinePlayer player, double amount) {
             if (sender instanceof Player) {
                 if(ConfigMain.getPlayerEmc(plugin, player)+amount > 0){
-                    addPlayerEmc(plugin, sender.getUniqueId().toString(), new Double(amount));
+                    addPlayerEmc(plugin, player.getUniqueId().toString(), new Double(amount));
                 }
             }
         }
