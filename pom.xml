@@ -131,7 +131,7 @@
         </repository>
         <repository>
             <id>repo</id>
-            <url>https://repo.triumphteam.dev/snapshots/</url>
+            <url>https://repo.mattstudios.me/artifactory/public/</url>
         </repository>
     </repositories>
 
