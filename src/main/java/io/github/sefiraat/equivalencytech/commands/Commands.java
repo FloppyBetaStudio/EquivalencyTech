@@ -158,7 +158,7 @@ public class Commands extends BaseCommand {
         @CommandCompletion("*")
         public void onAddEMC(CommandSender sender, OnlinePlayer player) {
             if (sender instanceof Player) {
-                sender.sendMessage("EMC余额:"+(ConfigMain.getPlayerEmc(plugin, player.getPlayer())));
+                sender.sendMessage("EMC余额:"+toString(ConfigMain.getPlayerEmc(plugin, player.getPlayer())));
                 }
             }
         }
